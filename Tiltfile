@@ -5,5 +5,5 @@ k8s_yaml('deploy/crds/cache.example.com_v1alpha1_memcached_cr.yaml')
 custom_build(
   'gcr.io/windmill-public-containers/memcached-operator',
   'operator-sdk build $EXPECTED_REF',
-  ['cmd/manager', 'pkg'],
+  ['cmd/manager', 'pkg', 'go.mod', 'go.sum', 'version', 'tools.go'],
 )
