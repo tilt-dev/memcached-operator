@@ -7,3 +7,5 @@ custom_build(
   'operator-sdk build $EXPECTED_REF',
   ['cmd/manager', 'pkg', 'go.mod', 'go.sum', 'version', 'tools.go'],
 )
+
+local_resource('Regenerate CRD', 'operator-sdk generate k8s', deps='deploy/crds/cache.example.com_memcacheds_crd.yaml')
